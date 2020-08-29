@@ -16,7 +16,7 @@ public class Calculadora {
      */
     public static void main(String[] args) {
         //Carlos
-    	System.out.print("alo mundo");
+    	System.out.print("teste");
     }
     
 }
