@@ -5,17 +5,29 @@
  */
 package calculadora;
 
+import javax.swing.*;
+import java.awt.event.*;
+
 /**
  *
  * @author Root
  */
 public class calc extends javax.swing.JFrame {
+    
+    
+    private int leitura;
+    private int memoria;
+    private char operacao;
+     
 
     /**
      * Creates new form calc
      */
     public calc() {
         initComponents();
+        leitura = 0;
+        memoria = 0;
+       
     }
 
     /**
@@ -27,7 +39,7 @@ public class calc extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
+        Jt_opera = new javax.swing.JTextField();
         BT0 = new javax.swing.JToggleButton();
         BT1 = new javax.swing.JToggleButton();
         BT2 = new javax.swing.JToggleButton();
@@ -47,9 +59,9 @@ public class calc extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        Jt_opera.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                Jt_operaActionPerformed(evt);
             }
         });
 
@@ -172,7 +184,7 @@ public class calc extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField1)
+                    .addComponent(Jt_opera)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -208,7 +220,7 @@ public class calc extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Jt_opera, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BT7)
@@ -240,69 +252,122 @@ public class calc extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BT1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT1ActionPerformed
-        // TODO add your handling code here:
+       
+        leitura += 1;
+        Jt_opera.setText(Jt_opera.getText()+ "1");
     }//GEN-LAST:event_BT1ActionPerformed
 
     private void BT_igualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_igualActionPerformed
-        // TODO add your handling code here:
+       int res = 0;
+        switch (operacao){
+           case '+':{
+               res = memoria + leitura;
+               break;
+           }
+           case '-':{
+              res = memoria - leitura;
+               break;
+           }
+           case '*':{
+               res = memoria * leitura;
+               break;
+           }
+           case '/':{
+               res = memoria / leitura;
+               break;
+           }
+       }
+       
+       leitura = 0;
+       Jt_opera.setText("" + res);
     }//GEN-LAST:event_BT_igualActionPerformed
 
     private void BT2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT2ActionPerformed
-        // TODO add your handling code here:
+        
+        leitura += 2;
+        Jt_opera.setText(Jt_opera.getText()+ "2");
     }//GEN-LAST:event_BT2ActionPerformed
 
     private void BT3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT3ActionPerformed
-        // TODO add your handling code here:
+        
+        leitura += 3;
+        Jt_opera.setText(Jt_opera.getText()+ "3");
     }//GEN-LAST:event_BT3ActionPerformed
 
     private void BT_subActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_subActionPerformed
-        // TODO add your handling code here:
+       operacao = '-';
+       memoria += leitura;
+       leitura = 0;
+       Jt_opera.setText("");
+        
     }//GEN-LAST:event_BT_subActionPerformed
 
     private void BT0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT0ActionPerformed
-        // TODO add your handling code here:
+        String bt = Jt_opera.getText();
+        Jt_opera.setText(bt + "0");
     }//GEN-LAST:event_BT0ActionPerformed
 
     private void BT_multActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_multActionPerformed
-        // TODO add your handling code here:
+       operacao = '*';
+       memoria += leitura;
+       leitura = 0;
+       Jt_opera.setText("");
     }//GEN-LAST:event_BT_multActionPerformed
 
     private void BT_adcaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_adcaoActionPerformed
-        // TODO add your handling code here:
+       operacao = '+';
+       memoria += leitura;
+       leitura = 0;
+       Jt_opera.setText("");
     }//GEN-LAST:event_BT_adcaoActionPerformed
 
     private void BT4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT4ActionPerformed
-        // TODO add your handling code here:
+        
+        leitura += 4;
+        Jt_opera.setText(Jt_opera.getText()+ "4");
     }//GEN-LAST:event_BT4ActionPerformed
 
     private void BT8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT8ActionPerformed
-        // TODO add your handling code here:
+        
+        leitura += 8;
+        Jt_opera.setText(Jt_opera.getText()+ "8");
     }//GEN-LAST:event_BT8ActionPerformed
 
     private void BT5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT5ActionPerformed
-        // TODO add your handling code here:
+        
+        leitura += 5;
+        Jt_opera.setText(Jt_opera.getText()+ "5");
     }//GEN-LAST:event_BT5ActionPerformed
 
     private void BT6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT6ActionPerformed
-        // TODO add your handling code here:
+        
+        leitura += 6;
+        Jt_opera.setText(Jt_opera.getText()+ "6");
     }//GEN-LAST:event_BT6ActionPerformed
 
     private void BT7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT7ActionPerformed
-        // TODO add your handling code here:
+        
+        leitura += 7;
+        Jt_opera.setText(Jt_opera.getText()+ "7");
     }//GEN-LAST:event_BT7ActionPerformed
 
     private void BT9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT9ActionPerformed
-        // TODO add your handling code here:
+        
+        leitura += 9;
+        Jt_opera.setText(Jt_opera.getText()+ "9");
     }//GEN-LAST:event_BT9ActionPerformed
 
     private void BT_diviActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_diviActionPerformed
-        // TODO add your handling code here:
+       operacao = '/';
+       memoria += leitura;
+       leitura = 0;
+       Jt_opera.setText("");
     }//GEN-LAST:event_BT_diviActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-        //teste
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void Jt_operaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jt_operaActionPerformed
+       
+      
+    }//GEN-LAST:event_Jt_operaActionPerformed
 
     private void BT_pontoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_pontoActionPerformed
         // TODO add your handling code here:
@@ -360,6 +425,6 @@ public class calc extends javax.swing.JFrame {
     private javax.swing.JToggleButton BT_mult;
     private javax.swing.JToggleButton BT_ponto;
     private javax.swing.JToggleButton BT_sub;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField Jt_opera;
     // End of variables declaration//GEN-END:variables
 }
