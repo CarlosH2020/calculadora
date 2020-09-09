@@ -15,7 +15,7 @@ import java.awt.event.*;
 public class calc extends javax.swing.JFrame {
     
     
-    private int leitura;
+    private String valor;
     private int memoria;
     private char operacao;
      
@@ -25,7 +25,7 @@ public class calc extends javax.swing.JFrame {
      */
     public calc() {
         initComponents();
-        leitura = 0;
+       
         memoria = 0;
        
     }
@@ -252,116 +252,100 @@ public class calc extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BT1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT1ActionPerformed
+       valor = Jt_opera.getText();
+       valor = valor + "1";
+       Jt_opera.setText(valor);
        
-        leitura += 1;
-        Jt_opera.setText(Jt_opera.getText()+ "1");
     }//GEN-LAST:event_BT1ActionPerformed
 
     private void BT_igualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_igualActionPerformed
-       int res = 0;
-        switch (operacao){
-           case '+':{
-               res = memoria + leitura;
-               break;
-           }
-           case '-':{
-              res = memoria - leitura;
-               break;
-           }
-           case '*':{
-               res = memoria * leitura;
-               break;
-           }
-           case '/':{
-               res = memoria / leitura;
-               break;
-           }
+       switch{
        }
-       
-       leitura = 0;
-       Jt_opera.setText("" + res);
+        
     }//GEN-LAST:event_BT_igualActionPerformed
 
     private void BT2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT2ActionPerformed
         
-        leitura += 2;
-        Jt_opera.setText(Jt_opera.getText()+ "2");
+        valor = Jt_opera.getText();
+        valor = valor + "2";
+        Jt_opera.setText(valor);
     }//GEN-LAST:event_BT2ActionPerformed
 
     private void BT3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT3ActionPerformed
         
-        leitura += 3;
-        Jt_opera.setText(Jt_opera.getText()+ "3");
+       valor = Jt_opera.getText();
+       valor = valor + "3";
+       Jt_opera.setText(valor);
     }//GEN-LAST:event_BT3ActionPerformed
 
     private void BT_subActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_subActionPerformed
-       operacao = '-';
-       memoria += leitura;
-       leitura = 0;
-       Jt_opera.setText("");
+       String valor = Jt_opera.getText();
+        Jt_opera.setText(valor + "-");
         
     }//GEN-LAST:event_BT_subActionPerformed
 
     private void BT0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT0ActionPerformed
-        String bt = Jt_opera.getText();
-        Jt_opera.setText(bt + "0");
+       valor = Jt_opera.getText();
+       valor = valor + "0";
+       Jt_opera.setText(valor);
     }//GEN-LAST:event_BT0ActionPerformed
 
     private void BT_multActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_multActionPerformed
-       operacao = '*';
-       memoria += leitura;
-       leitura = 0;
-       Jt_opera.setText("");
+      String valor = Jt_opera.getText();
+        Jt_opera.setText(valor + "*");
     }//GEN-LAST:event_BT_multActionPerformed
 
     private void BT_adcaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_adcaoActionPerformed
-       operacao = '+';
-       memoria += leitura;
-       leitura = 0;
-       Jt_opera.setText("");
+       
+       String valor = Jt_opera.getText();
+        Jt_opera.setText(valor + "+");
     }//GEN-LAST:event_BT_adcaoActionPerformed
 
     private void BT4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT4ActionPerformed
         
-        leitura += 4;
-        Jt_opera.setText(Jt_opera.getText()+ "4");
+        valor = Jt_opera.getText();
+        valor = valor + "4";
+        Jt_opera.setText(valor);
     }//GEN-LAST:event_BT4ActionPerformed
 
     private void BT8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT8ActionPerformed
         
-        leitura += 8;
-        Jt_opera.setText(Jt_opera.getText()+ "8");
+       valor = Jt_opera.getText();
+       valor = valor + "8";
+       Jt_opera.setText(valor);
     }//GEN-LAST:event_BT8ActionPerformed
 
     private void BT5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT5ActionPerformed
         
-        leitura += 5;
-        Jt_opera.setText(Jt_opera.getText()+ "5");
+        valor = Jt_opera.getText();
+        valor = valor + "5";
+        Jt_opera.setText(valor);
     }//GEN-LAST:event_BT5ActionPerformed
 
     private void BT6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT6ActionPerformed
         
-        leitura += 6;
-        Jt_opera.setText(Jt_opera.getText()+ "6");
+        valor = Jt_opera.getText();
+        valor = valor + "6";
+        Jt_opera.setText(valor);
     }//GEN-LAST:event_BT6ActionPerformed
 
     private void BT7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT7ActionPerformed
         
-        leitura += 7;
-        Jt_opera.setText(Jt_opera.getText()+ "7");
+        valor = Jt_opera.getText();
+        valor = valor + "7";
+        Jt_opera.setText(valor);
     }//GEN-LAST:event_BT7ActionPerformed
 
     private void BT9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT9ActionPerformed
         
-        leitura += 9;
-        Jt_opera.setText(Jt_opera.getText()+ "9");
+        valor = Jt_opera.getText();
+        valor = valor + "9";
+        Jt_opera.setText(valor);
     }//GEN-LAST:event_BT9ActionPerformed
 
     private void BT_diviActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_diviActionPerformed
-       operacao = '/';
-       memoria += leitura;
-       leitura = 0;
-       Jt_opera.setText("");
+       String valor = Jt_opera.getText();
+        Jt_opera.setText(valor + "/");
     }//GEN-LAST:event_BT_diviActionPerformed
 
     private void Jt_operaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jt_operaActionPerformed
@@ -408,6 +392,12 @@ public class calc extends javax.swing.JFrame {
             }
         });
     }
+    public static float soma(float v1 , float v2){
+        
+        return v1 + v2;
+    }
+    
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton BT0;
