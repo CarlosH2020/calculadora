@@ -13,22 +13,16 @@ import java.awt.event.*;
  * @author Root
  */
 public class calc extends javax.swing.JFrame {
-    
-    
-    private String valor;
-    private int memoria;
-    private char operacao;
-     
-
     /**
      * Creates new form calc
      */
     public calc() {
         initComponents();
        
-        memoria = 0;
        
     }
+    double value1, value2;
+    String sinal;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -288,100 +282,92 @@ public class calc extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BT1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT1ActionPerformed
-       valor = Jt_opera.getText();
-       valor = valor + "1";
-       Jt_opera.setText(valor);
+       Jt_opera.setText(Jt_opera.getText()+ "1");
        
     }//GEN-LAST:event_BT1ActionPerformed
 
     private void BT_igualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_igualActionPerformed
-       switch{
-       }
+      value2 = Double.parseDouble(Jt_opera.getText());
+      if(sinal == "soma"){
+          Jt_opera.setText(String.valueOf(value1 + value2));
+      }else if (sinal == "menos"){
+          Jt_opera.setText(String.valueOf(value1 - value2));
+      }else if (sinal == "mult"){
+          Jt_opera.setText(String.valueOf(value1 * value2));
+      }else if (sinal == "divi"){
+          Jt_opera.setText(String.valueOf(value1 / value2));
+      }else if(value2 == 0) {
+         Jt_opera.setText(String.valueOf("ERRO DE CALCULO"));
+      }
         
     }//GEN-LAST:event_BT_igualActionPerformed
 
     private void BT2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT2ActionPerformed
         
-        valor = Jt_opera.getText();
-        valor = valor + "2";
-        Jt_opera.setText(valor);
+        Jt_opera.setText(Jt_opera.getText()+ "2");
     }//GEN-LAST:event_BT2ActionPerformed
 
     private void BT3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT3ActionPerformed
         
-       valor = Jt_opera.getText();
-       valor = valor + "3";
-       Jt_opera.setText(valor);
+      Jt_opera.setText(Jt_opera.getText()+ "3");
     }//GEN-LAST:event_BT3ActionPerformed
 
     private void BT_subActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_subActionPerformed
-       String valor = Jt_opera.getText();
-        Jt_opera.setText(valor + "-");
+      value1 = Double.parseDouble(Jt_opera.getText());
+       Jt_opera.setText("");
+       sinal = "menos";
         
     }//GEN-LAST:event_BT_subActionPerformed
 
     private void BT0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT0ActionPerformed
-       valor = Jt_opera.getText();
-       valor = valor + "0";
-       Jt_opera.setText(valor);
+       Jt_opera.setText(Jt_opera.getText()+ "0");
     }//GEN-LAST:event_BT0ActionPerformed
 
     private void BT_multActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_multActionPerformed
-      String valor = Jt_opera.getText();
-        Jt_opera.setText(valor + "*");
+    value1 = Double.parseDouble(Jt_opera.getText());
+       Jt_opera.setText("");
+       sinal = "mult";
     }//GEN-LAST:event_BT_multActionPerformed
 
     private void BT_adcaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_adcaoActionPerformed
-       
-       String valor = Jt_opera.getText();
-        Jt_opera.setText(valor + "+");
+       value1 = Double.parseDouble(Jt_opera.getText());
+       Jt_opera.setText("");
+       sinal = "soma";
     }//GEN-LAST:event_BT_adcaoActionPerformed
 
     private void BT4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT4ActionPerformed
         
-        valor = Jt_opera.getText();
-        valor = valor + "4";
-        Jt_opera.setText(valor);
+        Jt_opera.setText(Jt_opera.getText()+ "4");
     }//GEN-LAST:event_BT4ActionPerformed
 
     private void BT8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT8ActionPerformed
-        
-       valor = Jt_opera.getText();
-       valor = valor + "8";
-       Jt_opera.setText(valor);
+     Jt_opera.setText(Jt_opera.getText()+ "8");
     }//GEN-LAST:event_BT8ActionPerformed
 
     private void BT5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT5ActionPerformed
         
-        valor = Jt_opera.getText();
-        valor = valor + "5";
-        Jt_opera.setText(valor);
+        Jt_opera.setText(Jt_opera.getText()+ "5");
     }//GEN-LAST:event_BT5ActionPerformed
 
     private void BT6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT6ActionPerformed
         
-        valor = Jt_opera.getText();
-        valor = valor + "6";
-        Jt_opera.setText(valor);
+       Jt_opera.setText(Jt_opera.getText()+ "6");
     }//GEN-LAST:event_BT6ActionPerformed
 
     private void BT7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT7ActionPerformed
         
-        valor = Jt_opera.getText();
-        valor = valor + "7";
-        Jt_opera.setText(valor);
+        Jt_opera.setText(Jt_opera.getText()+ "7");
     }//GEN-LAST:event_BT7ActionPerformed
 
     private void BT9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT9ActionPerformed
         
-        valor = Jt_opera.getText();
-        valor = valor + "9";
-        Jt_opera.setText(valor);
+        Jt_opera.setText(Jt_opera.getText()+ "9");
     }//GEN-LAST:event_BT9ActionPerformed
 
     private void BT_diviActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_diviActionPerformed
-       String valor = Jt_opera.getText();
-        Jt_opera.setText(valor + "/");
+       value1 = Double.parseDouble(Jt_opera.getText());
+       Jt_opera.setText("");
+       sinal = "divi";
     }//GEN-LAST:event_BT_diviActionPerformed
 
     private void Jt_operaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jt_operaActionPerformed
@@ -390,8 +376,7 @@ public class calc extends javax.swing.JFrame {
     }//GEN-LAST:event_Jt_operaActionPerformed
 
     private void BT_pontoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_pontoActionPerformed
-        // TODO add your handling code here:
-        //1234
+        Jt_opera.setText(Jt_opera.getText()+ ".");
     }//GEN-LAST:event_BT_pontoActionPerformed
 
     /**
