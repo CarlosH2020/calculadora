@@ -289,13 +289,13 @@ public class calc extends javax.swing.JFrame {
     private void BT_igualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_igualActionPerformed
       value2 = Double.parseDouble(Jt_opera.getText());
       if(sinal == "soma"){
-          Jt_opera.setText(String.valueOf(value1 + value2));
+          Jt_opera.setText(String.valueOf(soma(value1, value2)));
       }else if (sinal == "menos"){
-          Jt_opera.setText(String.valueOf(value1 - value2));
+          Jt_opera.setText(String.valueOf(sub(value1, value2)));
       }else if (sinal == "mult"){
-          Jt_opera.setText(String.valueOf(value1 * value2));
+          Jt_opera.setText(String.valueOf(mult(value1, value2)));
       }else if (sinal == "divi"){
-          Jt_opera.setText(String.valueOf(value1 / value2));
+          Jt_opera.setText(String.valueOf(div(value1, value2)));
       }else if(value2 == 0) {
          Jt_opera.setText(String.valueOf("ERRO DE CALCULO"));
       }
@@ -413,9 +413,18 @@ public class calc extends javax.swing.JFrame {
             }
         });
     }
-    public static float soma(float v1 , float v2){
+    public static double soma(double v1 , double v2){
         
         return v1 + v2;
+    }public static double sub(double v1 , double v2){
+        
+        return v1 - v2;
+    }public static double mult(double v1 , double v2){
+        
+        return v1 * v2;
+    }public static double div(double v1 , double v2){
+        
+        return v1 / v2;
     }
     
    
